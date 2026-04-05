@@ -1,0 +1,132 @@
+:root {
+	--body-background-color: hsl(212, 45%, 89%);
+	--card-background-color: hsl(0, 0%, 100%);
+
+	--content-color: hsl(216, 15%, 48%);
+
+	/* **DARk SCHEME */
+	--body-dark-background-color: hsl(197, 85%, 33%);
+	--card-dark-background-color: hsl(0, 0%, 0%);
+	--card-title-dark-background-color: hsl(0, 0%, 96%);
+	--content-dark-color: hsl(0, 0%, 96%);
+}
+
+/* ||GENERAL STYLES */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+img {
+	display: block;
+}
+
+body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--body-background-color);
+	font-family: "Outfit", sans-serif;
+	line-height: 1.4;
+	min-height: 100vh;
+	min-height: 100dvh;
+	position: relative;
+}
+
+/* ||BLOCKS */
+.card {
+	background-color: var(--card-background-color);
+	border-radius: 20px;
+	box-shadow: 0 0 10px 5px rgba(197, 197, 197, 0.39);
+	height: 475px;
+	padding: 1rem;
+	width: 85%;
+	max-width: 320px;
+}
+
+.qr-code {
+	border-radius: 10px;
+	width: 100%;
+}
+
+.content {
+	padding-inline: clamp(0.625rem, calc(0.125rem + 2.5vw), 1.25rem);
+}
+
+/* ||ELEMENTS */
+.card__title {
+	font-size: 1.25rem;
+	font-weight: 700;
+	line-height: 1.1;
+	margin: 1.15rem 0;
+}
+
+.card__para {
+	color: var(--content-color);
+	font-size: 0.94rem;
+	margin-bottom: 1rem;
+}
+
+/* ||UTILITIES */
+.flex {
+	display: flex;
+}
+
+.column {
+	flex-direction: column;
+}
+
+.absolute {
+	position: absolute;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.no-wrap {
+	white-space: nowrap;
+}
+
+/* ||FOOTER */
+.attribution {
+	bottom: 2%;
+	font-size: 0.6875rem;
+	text-align: center;
+}
+.attribution a {
+	color: hsl(228, 45%, 44%);
+}
+
+@media (orientation: landscape) and (pointer: coarse) {
+	.card {
+		margin-top: 2rem;
+		margin-bottom: 2.75rem;
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	body {
+		background-color: var(--body-dark-background-color);
+	}
+
+	.card {
+		background-color: var(--card-dark-background-color);
+		box-shadow: 0 0 10px 5px rgba(7, 5, 5, 0.438);
+	}
+
+	.card__title {
+		color: var(--card-title-dark-background-color);
+	}
+
+	.card__para {
+		color: var(--content-dark-color);
+	}
+
+	.attribution a {
+		color: rgb(202, 211, 202);
+	}
+}
